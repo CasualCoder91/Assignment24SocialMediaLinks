@@ -1,23 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
 
 namespace Assignment24SocialMediaLinks.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IConfiguration _configuration;
+        private readonly SocialMediaLinksOptions _options;
 
         public HomeController(IOptions<SocialMediaLinksOptions> options)
         {
-            _configuration = configuration;
+            _options = options.Value;
         }
 
         [Route("/")]
         public IActionResult Index()
         {
-            SocialMediaLinksOptions? options = _configuration.GetSection("SocialMediaLinks").Get<SocialMediaLinksOptions>();
-
-            ViewBag.SocialMediaLinksOptions = options;
-
+            ViewBag.SocialMediaLinksOptions = _options;
             return View();
         }
     }
