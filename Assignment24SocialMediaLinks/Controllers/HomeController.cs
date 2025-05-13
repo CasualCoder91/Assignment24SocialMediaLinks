@@ -6,7 +6,7 @@ namespace Assignment24SocialMediaLinks.Controllers
     {
         private readonly IConfiguration _configuration;
 
-        public HomeController(IConfiguration configuration)
+        public HomeController(IOptions<SocialMediaLinksOptions> options)
         {
             _configuration = configuration;
         }
