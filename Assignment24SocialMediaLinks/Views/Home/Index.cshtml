@@ -1,0 +1,34 @@
+﻿@model Assignment24SocialMediaLinks.SocialMediaLinksOptions
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Social Media Links</title>
+    <link href="~/StyleSheet.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="page-content">
+            <h1>Social Media Links</h1><br/>
+            <div class="flex">
+                <div>
+                    <a href="@ViewBag.SocialMediaLinksOptions.Facebook">Facebook</a>
+                </div>
+                <environment exclude="Development">
+                    <div>
+                        <a href="@ViewBag.SocialMediaLinksOptions.Instagram">Instagram</a>
+                    </div>
+                </environment>
+                <div>
+                    <a href="@ViewBag.SocialMediaLinksOptions.Twitter">Twitter</a>
+                </div>
+                <div>
+                    <a href="@ViewBag.SocialMediaLinksOptions.Youtube">Youtube</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
